@@ -1,0 +1,24 @@
+{% extends "pages/base.html" %}
+ 
+{% block title %}{{post.title}}{% endblock %}
+ 
+{% block content %}
+<h2>{{post.title}}</h2>
+<h6>on {{post.date}}</h6>
+{{post.body|safe|linebreaks}}
+
+{% for comment in post.comments.all %}
+    <h4><strong>{{comment.author}}</strong></h4>
+    <h6><p>{{comment.date}}</p></h6>
+    <p>{{comment.body|linebreaks}}</p>
+{% endfor %}
+{% if user.username %}
+    <form action="{% url 'post' post.id %}" method="POST">
+        {% csrf_token %}
+        <p><label>Bình luận:</label></p>
+        {{form.body}}
+        <br/>
+        <input type="submit" value="Bình luận"/>
+    </form>
+{% endif %}
+{% endblock %}

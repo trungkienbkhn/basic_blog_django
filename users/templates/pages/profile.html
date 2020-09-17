@@ -1,0 +1,17 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+</head>   
+<body>  
+    <h1>Profile</h1>
+    <h4>ID: {{ user.id }}</h4>
+    <h4>Username: {{ user.username }}</h4>
+    <h4>Email: {{ user.email }}</h4>
+    <a href="/edit/{{ user.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+    <a href="/delete/{{ user.id }}">Delete</a>  
+    <p><a href="/"><span>Trang chủ</span></a></p> 
+</body>  
+</html>  

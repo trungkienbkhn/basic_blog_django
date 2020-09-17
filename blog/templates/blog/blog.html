@@ -1,0 +1,13 @@
+{% extends "pages/base.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+{% for post in Posts %}
+    <h1>Title: {{post.title}}</h1>
+    <h2>{{post.body}}</h2>
+    <h4>{{post.date|date:"d-m-Y"}}</h4>
+    <a href="edit/{{ post.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+    <a href="delete/{{ post.id }}">Delete</a> 
+    <a href="{{post.id}}">Read post</a> 
+    <hr>
+{% endfor %}
+{% endblock %}

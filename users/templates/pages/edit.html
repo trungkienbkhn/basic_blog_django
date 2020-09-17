@@ -1,0 +1,18 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{user.id}}">  
+  {% csrf_token %}  
+  <p>
+    <label for="id_username">Tài khoản:</label>
+    <input type="text" name="username" id="id_username" required maxlength="20" value="{{ user.username }}"/>  
+  </p>
+  <input type="submit" value="Update"/>
+</form>  
+</body>  
+</html>  
